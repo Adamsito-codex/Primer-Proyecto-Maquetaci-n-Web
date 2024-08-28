@@ -1,0 +1,262 @@
+/* NORMALIZACION */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /*esto mantendra el ancho y el alto apesar de padding y border*/
+    font-family: "Roboto Mono", monospace;
+    list-style: none; /*quitar decoracion de las listas*/
+    text-decoration: none; /*quitar decoracion de los link*/
+    color: rgb(255, 255, 255);
+}
+
+body{
+    background-color: rgb(45, 45, 48); /*todo (pendiente)*/
+}
+
+header{
+    position: fixed; /*para que se fije en la parte superior*/
+    right: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    display: flex; /*esto hara que los elementos se pongan en linea*/
+    align-items: center;/*centra verticalmente*/
+    justify-content: space-between; 
+    padding: 30px 3%;
+    background-color: transparent;
+}
+
+.logo{
+    font-family: "Caveat", cursive;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.navlist{
+    display: flex; /*esto sirve para que los elementos de la linea ul se pongan en linea*/
+}
+
+.navlist a {
+    margin-left: 45px; /*separar las palabras del nav, hacia la izquierda*/
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent; /*este es un subrayado transparente*/
+    transition: all 1s ease 0s; /*darle estilo a todos los a del navlist*/
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid rgb(220, 220, 220); /*aparecera un subrayado cuando pongamos el mouse sobre un a*/
+}
+
+/* #menu-icon {
+    display: none; lo pongo none para que solo se vea en otros tipos de dispositivos
+} */
+
+#menu-icon {
+    display: none;
+    font-size: 35px;
+    z-index: 101; /*para que este sobre el header*/
+    cursor: pointer; /*para que aparezca la mano de seleccionar*/
+}
+
+#menu-toggle {
+    display: none; /*no quiero que se vea el input*/
+}
+
+.menu-icon-action{
+    display: block; /*para que no se pueda clickear*/
+}
+
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #2e0303 50%, #200202 75%, #0f0101 100% );
+    position: relative; /*para que el contenedor sea relativo y podamos usar top, bottom, right, left*/
+    display: grid; /*para que el hero se dividad en 2 columnas*/
+    grid-template-columns: 1fr 1fr; /*las 2 columnas*/
+    align-items: center; /*alinear verticalmente*/
+    gap: 2rem; /*brindar espacios de manera relativa*/
+}
+
+section{
+    padding: 0 8%;
+}
+
+.hero-text h5{
+    font-size: 60px;
+    font-weight: 700;
+    font-family: "Caveat", cursive;
+    margin-bottom: 5px;
+}
+
+.hero-text h4{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.hero-text h1{
+    font-family: "Caveat", cursive;
+    font-size: 100px;
+    font-weight: 500;
+    margin:  20px 0px 30px 0px;
+    line-height: 1;
+}
+
+.hero-text p{
+    font-weight: 400;
+    font-size: 100%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+
+.hero-img img{
+    width: 500px;
+    margin-left: 230px;
+    margin: 10% 0 0 10%;
+    height: auto;
+    transition: all 2s ease 0s;
+}
+
+.hero-img img:hover{
+    width: 600px;
+}
+
+.hero-text a {
+    display: inline-block;
+    background-color: rgb(65, 64, 64);
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    border-radius: 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 1s ease;
+    margin: 3px;
+}
+
+.hero-text a:hover{
+    background-color: transparent;
+    border: 1px solid rgb(43, 7, 7);
+    transform: translateX(8px);
+}
+
+.hero-text a.Logo-Discord {
+    background-color: transparent;
+    border: 1px solid rgb(43, 7, 7);
+}
+
+.hero-text a.Logo-Discord:hover{
+    background-color: rgb(65, 64, 64);
+    border: 1px solid rgb(31, 13, 13);
+
+}
+
+.hero-text a.Logo-Discord i {
+    vertical-align: middle;
+    margin-right: 12px;
+}
+
+.icons {
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+
+.icons i {
+    display: block;
+    margin: 40px 0;
+    font-size: 25px;
+    transition: all 0.5s ease;
+}
+
+.icons i:hover{
+    color: #4d4d4d;
+    transform: translateY(-5px);
+}
+
+@media (max-width:992px){
+    section {
+        padding: 0 3%;
+        transition: .2s;
+    }
+
+    .hero-text{
+        padding-top: 0;
+    }
+
+    .hero-img{
+        text-align: center;
+    }
+
+    .hero-img img{
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+
+    .hero-text p {
+        font-size: 70%;
+    }
+
+    .icons{
+        display: none;
+    }
+
+    .scroll-down{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+
+    .menu-icon-action{
+        display: block;
+    }
+
+    #menu-icon{
+        display: block;
+    }
+
+    .hero-text{
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-img img {
+        margin: 0;
+    }
+
+    .hero {
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .navlist{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #021719ef;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all .5s ease-out;
+    }
+
+    .navlist a {
+        display: block;
+        margin: 7px 0;
+    }
+
+    #menu-toggle:checked + label.menu-icon-action + ul{
+        right: 0;
+    }
+
+
+}
